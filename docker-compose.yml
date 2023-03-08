@@ -1,0 +1,18 @@
+version: '3'
+services:
+  user:
+    build:
+      context: .
+      dockerfile: ./etc/php/Dockerfile
+    volumes:
+      - ./:/var/www
+    ports:
+      - "8001:8000"
+    links:
+      - database
+  mail_supervisor:
+    build:
+      context: .
+      dockerfile: ./etc/supervisor/Dockerfile
+    volumes:
+      - ./:/var/www
