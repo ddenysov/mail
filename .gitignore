@@ -7,4 +7,6 @@
 /public/bundles/
 /var/
 /vendor/
+supervisord.log
+supervisord.pid
 ###< symfony/framework-bundle ###
