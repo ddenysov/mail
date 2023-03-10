@@ -1,12 +1,12 @@
 DC := docker-compose exec
-APP := $(DC) user
-SV := $(DC) user_supervisor
+APP := $(DC) app
+SV := $(DC) app_supervisor
 
 start:
 	@docker-compose up -d
 
 stop:
-	@docker-compose stop
+	@docker-compose down
 
 restart: stop start
 

@@ -1,6 +1,6 @@
 version: '3'
 services:
-  user:
+  app:
     build:
       context: .
       dockerfile: ./etc/php/Dockerfile
@@ -8,9 +8,7 @@ services:
       - ./:/var/www
     ports:
       - "8001:8000"
-    links:
-      - database
-  mail_supervisor:
+  app_supervisor:
     build:
       context: .
       dockerfile: ./etc/supervisor/Dockerfile

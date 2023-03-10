@@ -19,6 +19,12 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+    _instanceof:
+        App\Serializer\EventDenormalizer:
+            tags: [serializer.denormalizer]
+            # add more service definitions when explicit configuration is needed
+            # please note that last definitions always *replace* previous ones
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+        Ddenysov\SymfonyBus\Event\EventHandlerInterface:
+            tags:
+                - { name: messenger.message_handler, bus: event.bus }
