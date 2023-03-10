@@ -24,7 +24,8 @@ framework:
                     - validation
         transports:
             # https://symfony.com/doc/current/messenger.html#transport-configuration
-            user_events:
+            commands: '%env(MESSENGER_TRANSPORT_DSN)%'
+            events:
                 dsn: '%env(USER_EVENTS_CHANNEL)%'
                 serializer: App\Serializer\EventSerializer
             # failed: 'doctrine://default?queue_name=failed'
