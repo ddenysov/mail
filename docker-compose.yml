@@ -14,3 +14,15 @@ services:
       dockerfile: ./etc/supervisor/Dockerfile
     volumes:
       - ./:/var/www
+
+  # mail trap app
+  mailhog:
+    image: mailhog/mailhog:latest
+    volumes:
+      - mailhog:/maildir
+    ports:
+      - "1025:1025" #smtp server
+      - "8025:8025" #web ui
+
+volumes:
+  mailhog:
