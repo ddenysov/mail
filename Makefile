@@ -13,6 +13,12 @@ restart: stop start
 ssh:
 	@$(APP) bash
 
+ssh-sv:
+	@$(SV) bash
+
+log:
+	tail -f var/log/dev.log
+
 test:
 	@$(APP) bin/phpunit
 
