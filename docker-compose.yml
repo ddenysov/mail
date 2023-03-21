@@ -1,11 +1,11 @@
 version: '3'
 services:
   app:
+    environment:
+      DA_DEBUG: 'ololo123'
     image: ghcr.io/ddenysov/app:latest
     volumes:
       - ./:/var/www
-    ports:
-      - "8001:8000"
   app_supervisor:
     image: ghcr.io/ddenysov/supervisor:latest
     volumes:

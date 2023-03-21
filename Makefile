@@ -2,6 +2,12 @@ DC := docker-compose exec
 APP := $(DC) app
 SV := $(DC) app_supervisor
 
+build-image:
+	docker build etc/export --tag ghcr.io/ddenysov/mailer:latest
+
+push-image:
+	docker push ghcr.io/ddenysov/mailer:latest
+
 start:
 	@docker-compose up -d
 
