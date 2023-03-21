@@ -1,5 +1,4 @@
 version: '3'
 services:
   deploy:
-    build:
-      context: .
+    image: ghcr.io/ddenysov/mailer:latest

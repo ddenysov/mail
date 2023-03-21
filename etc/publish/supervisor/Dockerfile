@@ -1,4 +1,3 @@
-FROM ghcr.io/ddenysov/app:latest
+FROM ghcr.io/ddenysov/supervisor:latest
 ARG CACHEBUST=1
-RUN touch /var/${CACHEBUST}.txt
 RUN echo ${CACHEBUST} && git clone https://github.com/ddenysov/mail.git .
